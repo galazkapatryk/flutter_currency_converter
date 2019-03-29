@@ -1,0 +1,1 @@
+enum BuildType { mock, api }
