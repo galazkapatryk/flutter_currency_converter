@@ -5,6 +5,7 @@ import 'package:redux/redux.dart';
 
 HomeState changeInputCurrencyReducer(
     HomeState state, ChangeInputCurrency action) {
+  print("reducer change input");
   return HomeState(
       inputCurrency: action.inputCurrency,
       outputCurrency: state.outputCurrency);
@@ -15,5 +16,6 @@ final Reducer<HomeState> homeStateReducers = combineReducers<HomeState>([
 ]);
 
 AppState appStateReducer(AppState state, action) {
+  print("app state reducer");
   return AppState(homeState: homeStateReducers(state.homeState, action));
 }

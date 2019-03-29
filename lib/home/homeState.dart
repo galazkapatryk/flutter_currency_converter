@@ -8,7 +8,8 @@ class HomeState {
   HomeState({@required this.inputCurrency, @required this.outputCurrency});
 
   factory HomeState.initial() {
-    return HomeState(inputCurrency: Currency(), outputCurrency: Currency());
+    print("home state initial");
+    return HomeState(inputCurrency: Currency.initial(), outputCurrency: Currency());
   }
 
 }
