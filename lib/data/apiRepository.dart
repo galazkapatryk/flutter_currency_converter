@@ -14,7 +14,6 @@ class ApiRepository extends Repository {
       // If server returns an OK response, parse the JSON
       return RatesResponse.fromJson(json.decode(response.body),outputCurrenciesCodes);
     } else {
-      print(response.body);
       throw Exception('Failed to load post');
     }
   }

@@ -18,9 +18,6 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    repository.getRates("USD", ["PLN"]).then((response) {
-      print(response.rates.first.value);
-    });
   }
 
   @override
