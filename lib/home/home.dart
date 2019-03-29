@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_currency_converter/app/AppState.dart';
-import 'package:flutter_currency_converter/app/Globals.dart';
-import 'package:flutter_currency_converter/home/HomeState.dart';
-import 'package:flutter_currency_converter/redux/actions/Actions.dart';
-import 'package:flutter_currency_converter/viewData/Currency.dart';
+import 'package:flutter_currency_converter/app/appState.dart';
+import 'package:flutter_currency_converter/app/globals.dart';
+import 'package:flutter_currency_converter/home/homeState.dart';
+import 'package:flutter_currency_converter/redux/actions/actions.dart';
+import 'package:flutter_currency_converter/viewData/currency.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 

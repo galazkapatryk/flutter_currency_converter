@@ -1,4 +1,4 @@
-import 'package:flutter_currency_converter/viewData/Currency.dart';
+import 'package:flutter_currency_converter/viewData/currency.dart';
 
 class ChangeInputCurrency{
   final Currency inputCurrency;

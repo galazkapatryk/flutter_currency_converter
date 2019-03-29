@@ -1,4 +1,4 @@
-import 'package:flutter_currency_converter/data/RatesResponse.dart';
+import 'package:flutter_currency_converter/data/ratesResponse.dart';
 
 abstract class Repository {
   //JUST EXAMPLE

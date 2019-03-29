@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_currency_converter/home/HomeState.dart';
+import 'package:flutter_currency_converter/home/homeState.dart';
 
 class AppState {
   final HomeState homeState;
