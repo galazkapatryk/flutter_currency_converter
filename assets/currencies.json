@@ -1,0 +1,17 @@
+[
+  {
+    "currencyCode":"BGN",
+    "currencyName":"Bulgarian lev",
+    "currencyIcon":"https://www.countryflags.io/bg/flat/64.png"
+  },
+  {
+    "currencyCode":"NZD",
+    "currencyName":"New Zealand dollar",
+    "currencyIcon":"https://www.countryflags.io/nz/flat/64.png"
+  },
+  {
+    "currencyCode":"ILS",
+    "currencyName":"Israeli new shekl",
+    "currencyIcon":"https://www.countryflags.io/IL/flat/64.png"
+  }
+]

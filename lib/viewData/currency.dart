@@ -1,16 +1,21 @@
 class Currency {
   final String currencyTitle;
-  final double currencyQuantity;
-  final String currencyComparasion;
+  final String currencyCode;
+  final String iconUrl;
+  double currencyQuantity = 0;
+  String currencyComparasion = "";
 
-  Currency(
-      {this.currencyTitle, this.currencyQuantity, this.currencyComparasion});
+  Currency({this.currencyTitle, this.iconUrl, this.currencyCode});
 
   factory Currency.initial() {
+    return Currency(currencyTitle: "initial", iconUrl: "", currencyCode: "");
+  }
+
+  factory Currency.fromDto(
+      String currencyTitle, String currencyCode, String currencyIcon) {
     return Currency(
-      currencyTitle: "initial",
-      currencyQuantity: 0,
-      currencyComparasion: "initial"
-    );
+        currencyTitle: currencyTitle,
+        iconUrl: currencyIcon,
+        currencyCode: currencyCode);
   }
 }

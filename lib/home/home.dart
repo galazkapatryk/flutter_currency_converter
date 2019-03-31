@@ -3,6 +3,7 @@ import 'package:flutter_currency_converter/app/appState.dart';
 import 'package:flutter_currency_converter/app/globals.dart';
 import 'package:flutter_currency_converter/redux/actions/actions.dart';
 import 'package:flutter_currency_converter/viewData/currency.dart';
+import 'package:flutter_currency_converter/widgets/currencyWidget.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
@@ -25,12 +26,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: StoreConnector<AppState, _HomeViewModel>(
           converter: (store) => _HomeViewModel.create(store),
-          builder: (context, _HomeViewModel viewModel) =>
-              Container(
-                  color: Colors.white,
-                  child: HomeView(viewModel: viewModel),
-              )
-      ),
+          builder: (context, _HomeViewModel viewModel) => Container(
+                color: Colors.white,
+                child: HomeView(viewModel: viewModel),
+              )),
     );
   }
 }
@@ -38,13 +37,18 @@ class _HomeState extends State<Home> {
 class _HomeViewModel {
   final Currency inputCurrency;
   final Currency outputCurrency;
+  final List<Currency> possibleCurrency;
   final Function(Currency) onInputCurrencyChanged;
   final Function(Currency) onOutputCurrencyChanged;
+  final Function(List<Currency>) onCurrencyListDownloaded;
 
-  _HomeViewModel({this.inputCurrency,
-    this.outputCurrency,
-    this.onInputCurrencyChanged,
-    this.onOutputCurrencyChanged});
+  _HomeViewModel(
+      {this.inputCurrency,
+      this.outputCurrency,
+      this.onInputCurrencyChanged,
+      this.onOutputCurrencyChanged,
+      this.onCurrencyListDownloaded,
+      this.possibleCurrency});
 
   factory _HomeViewModel.create(Store<AppState> store) {
     print("create viewmodel");
@@ -57,11 +61,17 @@ class _HomeViewModel {
       store.dispatch(ChangeOutputCurrency(outputCurrency));
     }
 
+    _onCurrencyListDownloaded(List<Currency> currencies) {
+      store.dispatch(CurrencyListDownloaded(currencies));
+    }
+
     return _HomeViewModel(
         inputCurrency: store.state.homeState.inputCurrency,
         outputCurrency: store.state.homeState.outputCurrency,
+        possibleCurrency: store.state.homeState.possibleCurrencies,
         onInputCurrencyChanged: _onInputCurrencyChanged,
-        onOutputCurrencyChanged: _onOutputCurrencyChanged);
+        onOutputCurrencyChanged: _onOutputCurrencyChanged,
+        onCurrencyListDownloaded: _onCurrencyListDownloaded);
   }
 }
 
@@ -80,9 +90,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
-    repository.getRates("USD", ["PLN"]).then((response) {
-      widget.viewModel.onInputCurrencyChanged(
-          Currency(currencyTitle: response.rates[0].currencyCode,currencyComparasion: "",currencyQuantity: 0));
+    repository.getPossibleCurrencies(context).then((response) {
+      widget.viewModel.onCurrencyListDownloaded(response);
     });
   }
 
@@ -92,9 +101,14 @@ class _HomeViewState extends State<HomeView> {
     return Container(
         color: Colors.black,
         child: Center(
-          child: Text(
-            widget.viewModel.inputCurrency.currencyTitle,
-            style: TextStyle(color: Colors.white),
+          child: PageView.builder(
+            itemBuilder: (context, position) {
+              return Container(
+                  color: Colors.white,
+                  child: CurrencyWidget(
+                      currency: widget.viewModel.possibleCurrency[position]));
+            },
+            itemCount: widget.viewModel.possibleCurrency.length,
           ),
         ));
   }

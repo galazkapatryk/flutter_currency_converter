@@ -1,5 +1,7 @@
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_currency_converter/data/ratesResponse.dart';
 import 'package:flutter_currency_converter/data/repository.dart';
+import 'package:flutter_currency_converter/viewData/currency.dart';
 
 class MockRepository extends Repository {
   @override
@@ -7,4 +9,10 @@ class MockRepository extends Repository {
       String baseCurrencyCode, List<String> outputCurrenciesCodes) {
     return Future.error(Error());
   }
+
+  @override
+  Future<List<Currency>> getPossibleCurrencies(BuildContext context) {
+    return Future.error(Error());
+  }
+
 }

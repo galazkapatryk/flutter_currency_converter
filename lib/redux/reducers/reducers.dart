@@ -8,11 +8,20 @@ HomeState changeInputCurrencyReducer(
   print("reducer change input");
   return HomeState(
       inputCurrency: action.inputCurrency,
-      outputCurrency: state.outputCurrency);
+      outputCurrency: state.outputCurrency,
+      possibleCurrencies: state.possibleCurrencies);
+}
+HomeState getPossibleCurrenciesReducer(
+    HomeState state, CurrencyListDownloaded action) {
+  return HomeState(
+      inputCurrency: state.inputCurrency,
+      outputCurrency: state.outputCurrency,
+      possibleCurrencies: action.currencies);
 }
 
 final Reducer<HomeState> homeStateReducers = combineReducers<HomeState>([
   new TypedReducer<HomeState, ChangeInputCurrency>(changeInputCurrencyReducer),
+  new TypedReducer<HomeState, CurrencyListDownloaded>(getPossibleCurrenciesReducer)
 ]);
 
 AppState appStateReducer(AppState state, action) {
