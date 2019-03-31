@@ -98,18 +98,20 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     print("home child ${widget.viewModel.inputCurrency.currencyTitle}");
-    return Container(
-        color: Colors.black,
-        child: Center(
-          child: PageView.builder(
-            itemBuilder: (context, position) {
-              return Container(
-                  color: Colors.white,
-                  child: CurrencyWidget(
-                      currency: widget.viewModel.possibleCurrency[position]));
-            },
-            itemCount: widget.viewModel.possibleCurrency.length,
-          ),
-        ));
+    return Column(
+        children:[Container(
+          height: 150,
+            child:Center(child:PageView.builder(
+          itemBuilder: (context, position) {
+            return CurrencyWidget(
+                currency: widget.viewModel.possibleCurrency[position]);
+          },
+          itemCount: widget.viewModel.possibleCurrency.length,
+        ))),Align(alignment: Alignment.center,child:TextFormField(
+          keyboardType: TextInputType.number,
+          initialValue: '1',
+          textAlign: TextAlign.center,
+          decoration: InputDecoration.collapsed(),
+        ))]);
   }
 }

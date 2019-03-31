@@ -16,7 +16,7 @@ class CurrencyWidget extends StatelessWidget {
             shape: BoxShape.circle,
             image: DecorationImage(
                fit: BoxFit.none, image: NetworkImage(currency.iconUrl))),
-      )
+      ),Text('${currency.currencyTitle} (${currency.currencyCode})')
     ],);
   }
 }
