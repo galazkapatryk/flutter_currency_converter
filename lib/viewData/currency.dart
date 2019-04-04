@@ -2,8 +2,6 @@ class Currency {
   final String currencyTitle;
   final String currencyCode;
   final String iconUrl;
-  double currencyQuantity = 0;
-  String currencyComparasion = "";
 
   Currency({this.currencyTitle, this.iconUrl, this.currencyCode});
 

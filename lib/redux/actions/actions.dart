@@ -12,6 +12,12 @@ class ChangeOutputCurrency {
   ChangeOutputCurrency(this.outputCurrency);
 }
 
+class ChangeCurrencyRate {
+  final double currencyRate;
+
+  ChangeCurrencyRate(this.currencyRate);
+}
+
 class CurrencyListDownloaded {
   final List<Currency> currencies;
 

@@ -5,6 +5,6 @@ import 'package:flutter_currency_converter/viewData/currency.dart';
 abstract class Repository {
   //JUST EXAMPLE
   Future<RatesResponse> getRates(
-      String baseCurrencyCode, List<String> outputCurrenciesCodes);
+      String baseCurrencyCode, String outputCurrencyCode);
   Future<List<Currency>> getPossibleCurrencies(BuildContext context);
 }

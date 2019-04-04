@@ -10,14 +10,16 @@ import 'package:http/http.dart' as http;
 class ApiRepository extends Repository {
   @override
   Future<RatesResponse> getRates(String baseCurrencyCode,
-      List<String> outputCurrenciesCodes) async {
+      String outputCurrencyCode) async {
+    print("api call");
+    print('https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=$outputCurrencyCode');
     final response = await http.get(
-        'https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=${outputCurrenciesCodes
-            .join(',')}');
+        'https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=$outputCurrencyCode');
     if (response.statusCode == 200) {
       // If server returns an OK response, parse the JSON
+      print(response);
       return RatesResponse.fromJson(
-          json.decode(response.body), outputCurrenciesCodes);
+          json.decode(response.body), outputCurrencyCode);
     } else {
       throw Exception('Failed to load post');
     }
