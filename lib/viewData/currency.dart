@@ -6,7 +6,7 @@ class Currency {
   Currency({this.currencyTitle, this.iconUrl, this.currencyCode});
 
   factory Currency.initial() {
-    return Currency(currencyTitle: "initial", iconUrl: "", currencyCode: "");
+    return Currency(currencyTitle: "American Dollar", iconUrl: "", currencyCode: "USD");
   }
 
   factory Currency.fromDto(

@@ -8,7 +8,8 @@ class HomeState {
   final double inputCurrencyCount;
   final double currenciesFactor;
 
-  getOutputCurrencyCount() {
+  double getOutputCurrencyCount() {
+    print(inputCurrencyCount);
     return inputCurrencyCount * currenciesFactor;
   }
 
@@ -23,9 +24,9 @@ class HomeState {
     print("home state initial");
     return HomeState(
         inputCurrency: Currency.initial(),
-        outputCurrency: Currency(),
+        outputCurrency: Currency.initial(),
         possibleCurrencies: [],
         inputCurrencyCount: 1,
-        currenciesFactor: 0);
+        currenciesFactor: 1);
   }
 }

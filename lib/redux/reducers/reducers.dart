@@ -44,12 +44,23 @@ HomeState changeCurrencyRate(HomeState state, ChangeCurrencyRate action) {
       inputCurrencyCount: state.inputCurrencyCount);
 }
 
+HomeState changeCurrencyCount(HomeState state, ChangeCurrencyCount action) {
+  return HomeState(
+      inputCurrency: state.inputCurrency,
+      outputCurrency: state.outputCurrency,
+      possibleCurrencies: state.possibleCurrencies,
+      currenciesFactor: state.currenciesFactor,
+      inputCurrencyCount: action.currencyCount);
+}
+
 final Reducer<HomeState> homeStateReducers = combineReducers<HomeState>([
   new TypedReducer<HomeState, ChangeInputCurrency>(changeInputCurrencyReducer),
   new TypedReducer<HomeState, CurrencyListDownloaded>(
       getPossibleCurrenciesReducer),
-  new TypedReducer<HomeState, ChangeOutputCurrency>(changeOutputCurrencyReducer),
-  new TypedReducer<HomeState, ChangeCurrencyRate>(changeCurrencyRate)
+  new TypedReducer<HomeState, ChangeOutputCurrency>(
+      changeOutputCurrencyReducer),
+  new TypedReducer<HomeState, ChangeCurrencyRate>(changeCurrencyRate),
+  new TypedReducer<HomeState, ChangeCurrencyCount>(changeCurrencyCount)
 ]);
 
 AppState appStateReducer(AppState state, action) {

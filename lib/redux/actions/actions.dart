@@ -18,6 +18,12 @@ class ChangeCurrencyRate {
   ChangeCurrencyRate(this.currencyRate);
 }
 
+class ChangeCurrencyCount {
+  final double currencyCount;
+
+  ChangeCurrencyCount(this.currencyCount);
+}
+
 class CurrencyListDownloaded {
   final List<Currency> currencies;
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_currency_converter/app/fonts.dart';
 import 'package:flutter_currency_converter/viewData/currency.dart';
 
 class CurrencyWidget extends StatelessWidget {
@@ -9,25 +10,35 @@ class CurrencyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-            height: 100,
-            width: 150,
-            decoration: BoxDecoration(
-                gradient: RadialGradient(
-                    colors: [Colors.yellow, Colors.yellowAccent]),
-                borderRadius: BorderRadius.all(Radius.circular(5))),
-            child:Padding(padding: EdgeInsets.all(20),child: Row(
+      margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(0, 5), color: Colors.black12, blurRadius: 20)
+            ]),
+            child:Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 40,
-                  height: 40,
+                  height: 60,
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                          fit: BoxFit.none,
-                          image: NetworkImage(currency.iconUrl))),
-                ),
-                Text('${currency.currencyTitle} (${currency.currencyCode})')
+                          fit: BoxFit.fitHeight,
+                          image: NetworkImage(currency.iconUrl)),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 5),
+                            color: Colors.black12,
+                            blurRadius: 20)
+                      ]),
+                ),Container(margin: EdgeInsets.only(top: 5),child:
+                Text('${currency.currencyTitle} (${currency.currencyCode})',
+                    style: TextStyle(fontSize: 14,
+                        fontFamily: LatoBold, color: Colors.black)))
               ],
-            )));
+            ));
   }
 }
