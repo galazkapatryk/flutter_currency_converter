@@ -16,7 +16,7 @@ class CurrencyWidget extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(5)),
             boxShadow: [
               BoxShadow(
-                  offset: Offset(0, 5), color: Colors.black12, blurRadius: 20)
+                   color: Colors.black.withOpacity(0.03), blurRadius: 50)
             ]),
             child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +35,7 @@ class CurrencyWidget extends StatelessWidget {
                             blurRadius: 20)
                       ]),
                 ),Container(margin: EdgeInsets.only(top: 5),child:
-                Text('${currency.currencyTitle} (${currency.currencyCode})',
+                Text('${currency.currencyCode}',
                     style: TextStyle(fontSize: 14,
                         fontFamily: LatoBold, color: Colors.black)))
               ],

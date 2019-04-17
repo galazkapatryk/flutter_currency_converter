@@ -11,12 +11,9 @@ import 'package:redux/redux.dart';
 
 class CurrencyApp extends StatelessWidget {
   final BuildType buildType;
-  final Store store = Store<AppState>(
-    appStateReducer,
-    initialState: AppState.initial(),
-  );
+  final Store store;
 
-  CurrencyApp({Key key, @required this.buildType});
+  CurrencyApp({Key key, @required this.buildType, this.store});
 
   @override
   Widget build(BuildContext context) {

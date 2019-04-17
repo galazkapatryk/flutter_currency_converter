@@ -1,15 +1,10 @@
 import 'package:flutter_currency_converter/viewData/currency.dart';
 
-class ChangeInputCurrency {
+class ChangeCurrencyPair{
   final Currency inputCurrency;
-
-  ChangeInputCurrency(this.inputCurrency);
-}
-
-class ChangeOutputCurrency {
   final Currency outputCurrency;
 
-  ChangeOutputCurrency(this.outputCurrency);
+  ChangeCurrencyPair(this.inputCurrency, this.outputCurrency);
 }
 
 class ChangeCurrencyRate {

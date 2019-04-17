@@ -17,7 +17,6 @@ class ApiRepository extends Repository {
         'https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=$outputCurrencyCode');
     if (response.statusCode == 200) {
       // If server returns an OK response, parse the JSON
-      print(response);
       return RatesResponse.fromJson(
           json.decode(response.body), outputCurrencyCode);
     } else {

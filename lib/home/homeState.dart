@@ -2,14 +2,13 @@ import 'package:flutter_currency_converter/viewData/currency.dart';
 import 'package:meta/meta.dart';
 
 class HomeState {
-  final Currency inputCurrency;
-  final Currency outputCurrency;
-  final List<Currency> possibleCurrencies;
-  final double inputCurrencyCount;
-  final double currenciesFactor;
+  Currency inputCurrency;
+  Currency outputCurrency;
+  List<Currency> possibleCurrencies;
+  double inputCurrencyCount;
+  double currenciesFactor;
 
   double getOutputCurrencyCount() {
-    print(inputCurrencyCount);
     return inputCurrencyCount * currenciesFactor;
   }
 
@@ -21,12 +20,36 @@ class HomeState {
       @required this.currenciesFactor});
 
   factory HomeState.initial() {
-    print("home state initial");
     return HomeState(
         inputCurrency: Currency.initial(),
         outputCurrency: Currency.initial(),
         possibleCurrencies: [],
         inputCurrencyCount: 1,
         currenciesFactor: 1);
+  }
+
+  HomeState.fromJson(Map<String, dynamic> json) {
+    inputCurrency = Currency.fromJson(json['inputCurrency']);
+    outputCurrency = Currency.fromJson(json['outputCurrency']);
+    if (json['possibleCurrencies'] != null) {
+      possibleCurrencies = new List<Currency>();
+      json['possibleCurrencies'].forEach((v) {
+        possibleCurrencies.add(new Currency.fromJson(v));
+      });
+    }
+    inputCurrencyCount = json['inputCurrencyCount'];
+    currenciesFactor = json['currenciesFactor'];
+  }
+  Map<String,dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['inputCurrency'] = inputCurrency.toJson();
+    data['outputCurrency'] = outputCurrency.toJson();
+    if (this.possibleCurrencies != null) {
+      data['possibleCurrencies'] =
+          this.possibleCurrencies.map((v) => v.toJson()).toList();
+    }
+    data['inputCurrencyCount'] = inputCurrencyCount;
+    data['currenciesFactor'] = currenciesFactor;
+    return data;
   }
 }

@@ -26,6 +26,9 @@ dependencies:
   flutter_redux: ^0.5.3
   http: ^0.12.0+1
   palette_generator: ^0.1.1
+  shared_preferences: ^0.4.3
+  redux_logging: ^0.3.0
+  redux: ^3.0.0
 
 dev_dependencies:
   flutter_test:
