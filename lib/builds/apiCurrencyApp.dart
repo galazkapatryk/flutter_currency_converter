@@ -10,7 +10,7 @@ void main() async {
     DeviceOrientation.portraitUp,
   ]);
   var store = await createStore();
-  runApp(new CurrencyApp(
+  runApp(CurrencyApp(
     buildType: BuildType.api,
     store: store,
   ));

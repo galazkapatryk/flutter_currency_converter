@@ -1,4 +1,4 @@
-package branch.flutter_currency_converter
+package pl.branch.currency_converterr
 
 import android.os.Bundle
 

@@ -11,8 +11,6 @@ class ApiRepository extends Repository {
   @override
   Future<RatesResponse> getRates(String baseCurrencyCode,
       String outputCurrencyCode) async {
-    print("api call");
-    print('https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=$outputCurrencyCode');
     final response = await http.get(
         'https://api.exchangeratesapi.io/latest?base=$baseCurrencyCode&symbols=$outputCurrencyCode');
     if (response.statusCode == 200) {

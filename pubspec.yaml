@@ -30,9 +30,15 @@ dependencies:
   redux_logging: ^0.3.0
   redux: ^3.0.0
 
+
 dev_dependencies:
+  flutter_launcher_icons: "^0.7.0"
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  ios: true
+  image_path: "assets/icon.png"
 
 
 # For information on the generic Dart part of this file, see the
@@ -48,6 +54,7 @@ flutter:
   assets:
     - assets/currencies.json
     - assets/reverse.png
+    - assets/placeholder.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

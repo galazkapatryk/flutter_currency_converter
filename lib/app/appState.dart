@@ -15,7 +15,7 @@ class AppState {
   }
   AppState.fromJson(Map<String, dynamic> json) {
     homeState = json['homeState'] != null
-        ? new HomeState.fromJson(json['homeState'])
+        ? HomeState.fromJson(json['homeState'])
         : HomeState.initial();
   }
   Map<String, dynamic> toJson() {

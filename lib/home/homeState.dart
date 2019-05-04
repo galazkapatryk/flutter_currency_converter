@@ -32,16 +32,16 @@ class HomeState {
     inputCurrency = Currency.fromJson(json['inputCurrency']);
     outputCurrency = Currency.fromJson(json['outputCurrency']);
     if (json['possibleCurrencies'] != null) {
-      possibleCurrencies = new List<Currency>();
+      possibleCurrencies = List<Currency>();
       json['possibleCurrencies'].forEach((v) {
-        possibleCurrencies.add(new Currency.fromJson(v));
+        possibleCurrencies.add(Currency.fromJson(v));
       });
     }
     inputCurrencyCount = json['inputCurrencyCount'];
     currenciesFactor = json['currenciesFactor'];
   }
   Map<String,dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['inputCurrency'] = inputCurrency.toJson();
     data['outputCurrency'] = outputCurrency.toJson();
     if (this.possibleCurrencies != null) {

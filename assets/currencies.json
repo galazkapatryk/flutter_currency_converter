@@ -1,17 +1,117 @@
 [
   {
-    "currencyCode":"BGN",
-    "currencyName":"Bulgarian lev",
-    "currencyIcon":"https://www.countryflags.io/bg/flat/64.png"
+    "currencyCode": "USD",
+    "currencyName": "US dollar",
+    "currencyIcon": "https://www.countryflags.io/us/flat/64.png"
   },
   {
-    "currencyCode":"NZD",
-    "currencyName":"New Zealand dollar",
-    "currencyIcon":"https://www.countryflags.io/nz/flat/64.png"
+    "currencyCode": "PLN",
+    "currencyName": "Polish zloty",
+    "currencyIcon": "https://www.countryflags.io/pl/flat/64.png"
   },
   {
-    "currencyCode":"ILS",
-    "currencyName":"Israeli new shekl",
-    "currencyIcon":"https://www.countryflags.io/IL/flat/64.png"
+    "currencyCode": "CNY",
+    "currencyName": "Chinese yuan renminbi",
+    "currencyIcon": "https://www.countryflags.io/cn/flat/64.png"
+  },
+  {
+    "currencyCode": "HKD",
+    "currencyName": "Hong Kong dollar",
+    "currencyIcon": "https://www.countryflags.io/hk/flat/64.png"
+  },
+  {
+    "currencyCode": "IDR",
+    "currencyName": "Indonesian rupiah",
+    "currencyIcon": "https://www.countryflags.io/id/flat/64.png"
+  },
+  {
+    "currencyCode": "INR",
+    "currencyName": "Indian rupee",
+    "currencyIcon": "https://www.countryflags.io/in/flat/64.png"
+  },
+  {
+    "currencyCode": "KRW",
+    "currencyName": "South Korean won",
+    "currencyIcon": "https://www.countryflags.io/kr/flat/64.png"
+  },
+  {
+    "currencyCode": "MXN",
+    "currencyName": "Mexican peso",
+    "currencyIcon": "https://www.countryflags.io/mx/flat/64.png"
+  },
+  {
+    "currencyCode": "MYR",
+    "currencyName": "Malaysian ringgit",
+    "currencyIcon": "https://www.countryflags.io/my/flat/64.png"
+  },
+  {
+    "currencyCode": "PHP",
+    "currencyName": "Philippine peso",
+    "currencyIcon": "https://www.countryflags.io/ph/flat/64.png"
+  },
+  {
+    "currencyCode": "SGD",
+    "currencyName": "Singapore dollar",
+    "currencyIcon": "https://www.countryflags.io/sg/flat/64.png"
+  },
+  {
+    "currencyCode": "THB",
+    "currencyName": "Thai baht",
+    "currencyIcon": "https://www.countryflags.io/th/flat/64.png"
+  },
+  {
+    "currencyCode": "ZAR",
+    "currencyName": "South African rand",
+    "currencyIcon": "https://www.countryflags.io/za/flat/64.png"
+  },
+  {
+    "currencyCode": "SEK",
+    "currencyName": "Swedish krona",
+    "currencyIcon": "https://www.countryflags.io/se/flat/64.png"
+  },
+  {
+    "currencyCode": "RON",
+    "currencyName": "Romanian leu",
+    "currencyIcon": "https://www.countryflags.io/ro/flat/64.png"
+  },
+  {
+    "currencyCode": "HUF",
+    "currencyName": "Hungarian forint",
+    "currencyIcon": "https://www.countryflags.io/hu/flat/64.png"
+  },
+  {
+    "currencyCode": "GBP",
+    "currencyName": "Pound sterling",
+    "currencyIcon": "https://www.countryflags.io/gb/flat/64.png"
+  },
+  {
+    "currencyCode": "DKK",
+    "currencyName": "Danish krone",
+    "currencyIcon": "https://www.countryflags.io/dk/flat/64.png"
+  },
+  {
+    "currencyCode": "CZK",
+    "currencyName": "Czech koruna",
+    "currencyIcon": "https://www.countryflags.io/cz/flat/64.png"
+  },
+  {
+    "currencyCode": "JPY",
+    "currencyName": "Japanese yen",
+    "currencyIcon": "https://www.countryflags.io/jp/flat/64.png"
+  },
+  {
+    "currencyCode": "BGN",
+    "currencyName": "Bulgarian lev",
+    "currencyIcon": "https://www.countryflags.io/bg/flat/64.png"
+  },
+  {
+    "currencyCode": "NZD",
+    "currencyName": "New Zealand dollar",
+    "currencyIcon": "https://www.countryflags.io/nz/flat/64.png"
+  },
+  {
+    "currencyCode": "ILS",
+    "currencyName": "Israeli new shekl",
+    "currencyIcon": "https://www.countryflags.io/IL/flat/64.png"
   }
 ]
