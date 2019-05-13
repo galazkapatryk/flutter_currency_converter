@@ -1,4 +1,4 @@
-package pl.branch.currency_converterr
+package pl.branch.currency_converter
 
 import android.os.Bundle
 

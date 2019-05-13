@@ -10,6 +10,11 @@
     "currencyIcon": "https://www.countryflags.io/pl/flat/64.png"
   },
   {
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "currencyIcon": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/255px-Flag_of_Europe.svg.png"
+  },
+  {
     "currencyCode": "CNY",
     "currencyName": "Chinese yuan renminbi",
     "currencyIcon": "https://www.countryflags.io/cn/flat/64.png"

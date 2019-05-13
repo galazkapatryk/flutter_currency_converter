@@ -5,7 +5,6 @@ import 'package:flutter_currency_converter/app/globals.dart';
 import 'package:flutter_currency_converter/data/apiRepository.dart';
 import 'package:flutter_currency_converter/data/mockRepository.dart';
 import 'package:flutter_currency_converter/home/home.dart';
-import 'package:flutter_currency_converter/redux/reducers/reducers.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
@@ -21,6 +20,7 @@ class CurrencyApp extends StatelessWidget {
     return StoreProvider<AppState>(
       store: store,
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Home(),
       ),
     );
